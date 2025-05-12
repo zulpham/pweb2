@@ -7,8 +7,7 @@ class Pages extends BaseController
     public function index(): string
     {
         $data = [
-            'title' => 'Home | Unipdu Press',
-            //'tes' => ['satu', 'dua', 'tiga']
+            'title' => 'Fish Universe',
         ];
         return view('Pages/home', $data);
     }
@@ -18,18 +17,31 @@ class Pages extends BaseController
             'title' => 'Contact',
             'alamat' => [
                 [
-                    'tipe' => 'Rumah',
-                    'alamat' => 'Desa Peterongan no 28',
-                    'kota' => 'Jombang'
+                    'tipe' => 'Kantor',
+                    'alamat' => 'Jl. Raya Jombang No. 28'
                 ],
                 [
-                    'tipe' => 'Kantor', 
-                    'alamat' => 'Kompleks Ponpes Darul Ulum Peterongan',
-                    'kota' => 'Jombang'
+                    'tipe' => 'Email', 
+                    'alamat' => 'emailku@email.com'
                 ]
             ]
         ];
         return view('Pages/contact', $data);
     }
 
+    public function fish(): string
+    {
+        $data = [
+            'title' => 'Fish'
+        ];
+        return view('Pages/fish', $data);
+    }
+
+    public function tips(): string
+    {
+        $data = [
+            'title' => 'Tips'
+        ];
+        return view('Pages/tips', $data);
+    }
 }
