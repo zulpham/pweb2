@@ -20,4 +20,6 @@ $routes->get('/aku/matkul', 'aku::matkul');
 $routes->get('/aku/proyek', 'aku::proyek');
 $routes->get('/aku/musik', 'aku::musik');
 $routes->get('/aku/film', 'aku::film');
+$routes->get('/books', 'Books::index');
+$routes->get('/books/(:segment)', 'Books::detail/$1');
 $routes->setAutoRoute(false);
