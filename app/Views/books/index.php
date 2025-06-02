@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <a href="/books/create" class="btn btn-primary mt-3">Tambah Data Buku</a>
             <h1 class="mt-4 mb-4">Daftar Buku</h1>
             <table class="table table-striped">
                 <thead>
@@ -20,7 +21,7 @@
                         <th scope="row"><?=$i++?></th>
                         <td><img src="/images/<?=$b['sampul']?>" alt="" class="sampul img-thumbnail" style="max-width: 100px;"></td>
                         <td><?= $b['judul'];?></td>
-                        <td><a href="/books/<?= $b['slug']; ?>" class="btn btn-success">Detail</a></td>
+                        <td><a href="/books/detail/<?= $b['slug']; ?>" class="btn btn-success">Detail</a></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
@@ -29,3 +30,8 @@
     </div>
 </div>
 <?= $this->endSection();?>
+<?php if (session()->getFlashdata('pesan')) :?>
+<div class="alert alert-success" role="alert">
+    <?= session()->getFlashdata('pesan');?>
+</div>
+<?php endif;?>

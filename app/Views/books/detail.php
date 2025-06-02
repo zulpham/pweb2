@@ -15,9 +15,14 @@
                         <h5 class="card-title"><?= $buku['judul'];?></h5>
                         <p class="card-text"><b>Penulis : </b><?= $buku['penulis'];?></p>
                         <p class="card-text"><small class="text-muted"><b>Penerbit : </b><?= $buku['penerbit'];?></small></p>
-                        <a href="" class="btn btn-warning">Ubah</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
+                        <a href="/books/edit/<?=$buku['slug'];?>" class="btn btn-warning">Ubah</a>
+                        <!--<a href="" class="btn btn-danger">Hapus</a>-->
                         <br><br>
+                        <form action="/books/<?= $buku['id'];?>" method="post" class="d-inline">
+                            <?= csrf_field();?>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin?');">Hapus</button>
+                        </form>
                         <a href="/books">Kembali ke Daftar Buku</a>
                     </div>
                 </div>
