@@ -6,21 +6,33 @@ class Aku extends BaseController
 {
     public function matkul()
     {
-        return view('aku/matkul');
+        $data = [
+            'title' => 'Mata Kuliah'
+        ];
+        return view('aku/matkul', $data);
     }
 
     public function proyek() 
     {
-        return view('aku/proyek');
+        $data = [
+            'title' => 'Proyek'
+        ];
+        return view('aku/proyek', $data);
     }
 
     public function musik()
     {
-        return view('aku/musik');
+        $data = [
+            'title' => 'Musik Favorit'
+        ];
+        return view('aku/musik', $data);
     }
 
     public function film()
     {
-        return view('aku/film');
+        $data = [
+            'title' => 'Film Favorit'
+        ];
+        return view('aku/film', $data);
     }
 }
